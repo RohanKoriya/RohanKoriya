@@ -1,5 +1,5 @@
 # 💫 About Me:
-⚛️ MERN Stack Developer<br>MongoDB • Express • React • Node.js<br><br>🚀 Building real-world projects | 📈 Continuous learning
+⚛️ Software Developer<br>MongoDB • Express • React • Node.js<br><br>🚀 Building real-world projects | 📈 Continuous learning
 
 
 ## 🌐 Socials:
