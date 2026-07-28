@@ -1,0 +1,7 @@
+# The generator intentionally uses only the Python standard library
+# (urllib, json, xml.sax.saxutils) so the GitHub Action has zero install
+# overhead and there are no supply-chain dependencies to keep patched.
+#
+# This file exists so tooling (Dependabot, `pip install -r requirements.txt`)
+# has something to find. Add packages here only if you extend the generator
+# (e.g. `Pillow` if you start rasterizing PNG previews).
