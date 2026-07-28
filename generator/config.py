@@ -75,7 +75,7 @@ THEME = {
 CANVAS_WIDTH = 1000
 CANVAS_HEIGHT = 820
 SIDEBAR_WIDTH = 300
-SHOW_SIDEBAR = False
+SHOW_SIDEBAR = True
 
 # ── Output paths ─────────────────────────────────────────────────────
 OUTPUT_DIR = "output"
