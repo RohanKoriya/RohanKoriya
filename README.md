@@ -28,17 +28,17 @@ Everything above this line is generated. Nothing below it is.
 
 ## ✨ What it generates
 
-| Component | Description |
-|---|---|
-| `profile.svg` | The full dashboard — sidebar, terminal, stats, graph, languages, projects |
-| Animated terminal | SMIL-typed rotating tagline, boot-style status lines |
-| GitHub stats | Contributions, stars, repos, followers + a composite "score" ring |
-| Contribution graph | Real calendar heatmap, recolored to the neon theme, glow on hot days |
-| Language analytics | Stacked bar + ranked list, computed from your public repos |
-| Project cards | Auto-picks your top starred repos (or use a manual list) |
-| Profile sidebar | Avatar with neon glow ring, bio, quick links, achievement badges |
-| Visitor counter | Live hit counter via CountAPI, baked into the footer strip |
-| `snake.svg` / `snake-dark.svg` | A snake that eats its way across your real contribution grid |
+| Component                      | Description                                                               |
+| ------------------------------ | ------------------------------------------------------------------------- |
+| `profile.svg`                  | The full dashboard — sidebar, terminal, stats, graph, languages, projects |
+| Animated terminal              | SMIL-typed rotating tagline, boot-style status lines                      |
+| GitHub stats                   | Contributions, stars, repos, followers + a composite "score" ring         |
+| Contribution graph             | Real calendar heatmap, recolored to the neon theme, glow on hot days      |
+| Language analytics             | Stacked bar + ranked list, computed from your public repos                |
+| Project cards                  | Auto-picks your top starred repos (or use a manual list)                  |
+| Profile sidebar                | Avatar with neon glow ring, bio, quick links, achievement badges          |
+| Visitor counter                | Live hit counter via CountAPI, baked into the footer strip                |
+| `snake.svg` / `snake-dark.svg` | A snake that eats its way across your real contribution grid              |
 
 ## 🧠 How it works
 
@@ -116,6 +116,7 @@ secret and it will be picked up automatically.
 ## 🧩 Extending
 
 Add a new panel by:
+
 1. Creating `generator/components/your_panel.py` with a `build(x, y, w, h, data, theme)` function returning an SVG fragment.
 2. Calling it from `generator/svg_builder.py` and giving it a slot on the canvas.
 
