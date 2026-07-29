@@ -11,12 +11,12 @@ from . import config
 from .theme import build_defs
 from .components import (
     sidebar, terminal, stats, contribution_graph, languages, project_cards,
-    visitor_counter,
+    visitor_counter, tech_stack, github_stats_panel, achievements_panel,
 )
 
 
 def build_profile_svg(data: dict, theme: dict = config.THEME) -> str:
-    W, H = config.CANVAS_WIDTH, config.CANVAS_HEIGHT
+    W = config.CANVAS_WIDTH
     PAD_TOP = 24
 
     defs = build_defs(theme)
@@ -30,27 +30,43 @@ def build_profile_svg(data: dict, theme: dict = config.THEME) -> str:
 
     MAIN_W = W - MAIN_X - 24
 
+    # ── terminal ──
     terminal_h = 170
     terminal_svg = terminal.build(MAIN_X, PAD_TOP, MAIN_W, terminal_h, theme)
 
+    # ── stat tiles + score ring (now taller, with sparklines) ──
     stats_y = PAD_TOP + terminal_h + 24
-    stats_svg = stats.build(MAIN_X, stats_y, MAIN_W, data, theme)
+    stats_h = 110
+    stats_svg = stats.build(MAIN_X, stats_y, MAIN_W, stats_h, data, theme)
 
-    graph_y = stats_y + 90
-    graph_h = 190
+    # ── contribution heatmap (now taller, with month/day labels + streaks) ──
+    graph_y = stats_y + stats_h + 24
+    graph_h = 240
     graph_svg = contribution_graph.build(MAIN_X, graph_y, MAIN_W, graph_h, data, theme)
 
-    lang_y = graph_y + graph_h + 20
-    lang_h = 190
-    lang_w = (MAIN_W - 20) * 0.42
-    lang_svg = languages.build(MAIN_X, lang_y, lang_w, lang_h, data, theme)
+    # ── row 3: languages donut / tech stack / github stats — three even columns ──
+    row3_y = graph_y + graph_h + 20
+    row3_h = 190
+    col_gap = 20
+    col_w = (MAIN_W - 2 * col_gap) / 3
+    lang_svg = languages.build(MAIN_X, row3_y, col_w, row3_h, data, theme)
+    tech_svg = tech_stack.build(MAIN_X + col_w + col_gap, row3_y, col_w, row3_h, theme)
+    ghstats_svg = github_stats_panel.build(MAIN_X + 2 * (col_w + col_gap), row3_y, col_w, row3_h, data, theme)
 
-    projects_x = MAIN_X + lang_w + 20
-    projects_w = MAIN_W - lang_w - 20
-    projects_svg = project_cards.build(projects_x, lang_y, projects_w, lang_h, data, theme)
+    # ── row 4: featured projects (wide) + achievements (narrow) ──
+    row4_y = row3_y + row3_h + 20
+    row4_h = 190
+    projects_w = MAIN_W * 0.62
+    achievements_x = MAIN_X + projects_w + col_gap
+    achievements_w = MAIN_W - projects_w - col_gap
+    projects_svg = project_cards.build(MAIN_X, row4_y, projects_w, row4_h, data, theme)
+    achievements_svg = achievements_panel.build(achievements_x, row4_y, achievements_w, row4_h, theme)
 
-    footer_y = lang_y + lang_h + 24
+    # ── footer ──
+    footer_y = row4_y + row4_h + 24
     footer_svg = visitor_counter.build(MAIN_X, footer_y, MAIN_W, data, theme)
+
+    H = footer_y + 56 + 24  # footer height + bottom padding
 
     return f"""<svg width="{W}" height="{H}" viewBox="0 0 {W} {H}"
      xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -67,7 +83,10 @@ def build_profile_svg(data: dict, theme: dict = config.THEME) -> str:
     {stats_svg}
     {graph_svg}
     {lang_svg}
+    {tech_svg}
+    {ghstats_svg}
     {projects_svg}
+    {achievements_svg}
     {footer_svg}
   </g>
 </svg>"""

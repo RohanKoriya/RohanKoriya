@@ -13,18 +13,29 @@ from ..utils import esc, number_format
 
 def build(x: int, y: int, w: int, data: dict, theme: dict = config.THEME) -> str:
     visitors = data.get("visitors", 0)
-    updated = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+    updated = dt.datetime.now(dt.timezone.utc).strftime("%d %B %Y")
+
+    quote = ""
+    if config.FOOTER_QUOTE:
+        quote = (
+            f'<text x="{x+w/2}" y="{y+22}" text-anchor="middle" font-size="11" '
+            f'font-style="italic" fill="{theme["text_secondary"]}">'
+            f'"{esc(config.FOOTER_QUOTE)}" — {esc(config.DISPLAY_NAME)}</text>'
+        )
+
+    row_y = y + (44 if config.FOOTER_QUOTE else 22)
 
     return f"""
   <g id="footer">
     <line x1="{x}" y1="{y}" x2="{x+w}" y2="{y}" stroke="{theme['glass_stroke']}"/>
-    <circle cx="{x+14}" cy="{y+22}" r="4" fill="{theme['success']}">
+    {quote}
+    <circle cx="{x+14}" cy="{row_y}" r="4" fill="{theme['success']}">
       <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
     </circle>
-    <text x="{x+26}" y="{y+26}" font-size="11" class="mono" fill="{theme['text_secondary']}">
+    <text x="{x+26}" y="{row_y+4}" font-size="11" class="mono" fill="{theme['text_secondary']}">
       {esc(number_format(visitors))} profile visits
     </text>
-    <text x="{x+w-14}" y="{y+26}" text-anchor="end" font-size="10.5" class="mono"
-          fill="{theme['text_muted']}">Last generated: {esc(updated)}</text>
+    <text x="{x+w-14}" y="{row_y+4}" text-anchor="end" font-size="10.5" class="mono"
+          fill="{theme['text_muted']}">Last updated: {esc(updated)}</text>
   </g>
 """

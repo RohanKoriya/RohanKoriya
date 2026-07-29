@@ -41,7 +41,8 @@ class TestSvgBuilder(unittest.TestCase):
     def test_profile_svg_contains_all_panels(self):
         svg = build_profile_svg(self.data)
         for panel_id in ("sidebar", "terminal", "stats", "contribution-graph",
-                          "languages", "projects", "footer"):
+                          "languages", "tech-stack", "github-stats-panel",
+                          "projects", "achievements", "footer"):
             self.assertIn(f'id="{panel_id}"', svg)
 
     def test_snake_svg_is_valid_xml(self):

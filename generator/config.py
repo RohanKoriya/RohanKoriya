@@ -30,7 +30,7 @@ TWITTER = _env("GH_TWITTER", "")
 
 # ── Typing animation (rotating tagline under the name) ─────────────────
 TYPING_STRINGS = [
-    "     Building things that matter.",
+    "Building things that matter.",
     "Learning, experimenting, and sharing what I create.",
     "I enjoy solving problems more than memorizing solutions.",
     "Every project teaches me something new.",
@@ -70,6 +70,27 @@ THEME = {
     "font_display": "'Segoe UI', 'Inter', 'Helvetica Neue', sans-serif",
     "font_mono": "'JetBrains Mono', 'Fira Code', ui-monospace, monospace",
 }
+
+# ── Tech stack (shown as a small icon grid) ─────────────────────────
+# Each entry: display glyph/emoji, label, and brand-ish accent color.
+TECH_STACK = [
+    {"glyph": "JS", "label": "JavaScript", "color": "#f0db4f"},
+    {"glyph": "TS", "label": "TypeScript", "color": "#3178c6"},
+    {"glyph": "⚛", "label": "React", "color": "#61dafb"},
+    {"glyph": "N", "label": "Node.js", "color": "#3c873a"},
+    {"glyph": "🐍", "label": "Python", "color": "#3776ab"},
+    {"glyph": "🐳", "label": "Docker", "color": "#2496ed"},
+]
+
+# ── Footer quote (shown in the bottom strip) ────────────────────────
+FOOTER_QUOTE = "Code. Learn. Build. Repeat."
+
+# ── Achievements (shown as their own panel) ─────────────────────────
+ACHIEVEMENTS = [
+    {"emoji": "📘", "label": "Learning System Design"},
+    {"emoji": "🧠", "label": "Exploring ML/AI"},
+    {"emoji": "🌐", "label": "Building ai projects"},
+]
 
 # ── Canvas ───────────────────────────────────────────────────────────
 CANVAS_WIDTH = 1000
