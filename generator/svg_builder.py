@@ -39,9 +39,9 @@ def build_profile_svg(data: dict, theme: dict = config.THEME) -> str:
     stats_h = 110
     stats_svg = stats.build(MAIN_X, stats_y, MAIN_W, stats_h, data, theme)
 
-    # ── contribution heatmap (now taller, with month/day labels + streaks) ──
+    # ── contribution heatmap ──
     graph_y = stats_y + stats_h + 24
-    graph_h = 240
+    graph_h = 200
     graph_svg = contribution_graph.build(MAIN_X, graph_y, MAIN_W, graph_h, data, theme)
 
     # ── row 3: languages donut / tech stack / github stats — three even columns ──
