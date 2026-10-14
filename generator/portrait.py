@@ -22,39 +22,37 @@ def from_image(img_bytes: bytes, cols: int) -> list[str]:
     w, h = img.size
     side = min(w, h)                                  # centre-crop to a square
     img = img.crop(((w - side) // 2, (h - side) // 2, (w + side) // 2, (h + side) // 2))
-    rows = max(8, round(cols * CELL_ASPECT))
 
-    # Work at 4x the character grid and smooth first: real avatars are crisp and textured,
-    # and un-smoothed detail turns into speckle noise instead of a face.
-    big = ImageOps.autocontrast(img.convert("L"), cutoff=2).resize((cols * 4, rows * 4), Image.LANCZOS)
-    big = big.filter(ImageFilter.GaussianBlur(1.6)).filter(ImageFilter.MedianFilter(5))
-    bw, bh = big.size
-    bp = big.load()
-    border = [bp[i, 0] for i in range(bw)] + [bp[i, bh - 1] for i in range(bw)] + \
-             [bp[0, i] for i in range(bh)] + [bp[bw - 1, i] for i in range(bh)]
-    paper = sorted(border)[len(border) // 2]          # background = median of the border
+    gray = ImageOps.autocontrast(img.convert("L"), cutoff=2)
+    # paper colour = median of the border, so a plain background becomes empty space
+    px = gray.load()
+    border = [px[i, 0] for i in range(side)] + [px[i, side - 1] for i in range(side)] + \
+             [px[0, i] for i in range(side)] + [px[side - 1, i] for i in range(side)]
+    paper = sorted(border)[len(border) // 2]
     ink_is_dark = paper >= 128
 
-    hist = big.histogram()
+    hist = gray.histogram()
     total = sum(hist)
-    lo = next(i for i in range(256) if sum(hist[: i + 1]) > total * 0.01)
-    hi = next(i for i in range(255, -1, -1) if sum(hist[i:]) > total * 0.01)
+    lo = next(i for i, _ in enumerate(hist) if sum(hist[: i + 1]) > total * 0.01)       # 1st percentile
+    hi = next(i for i in range(255, -1, -1) if sum(hist[i:]) > total * 0.01)            # 99th percentile
     span = max(40, (paper - lo) if ink_is_dark else (hi - paper))
-
-    tone = big.resize((cols, rows), Image.BOX).load()
-    edges = big.filter(ImageFilter.FIND_EDGES).resize((cols, rows), Image.BOX).load()
-
+    rows = max(8, round(cols * CELL_ASPECT))
+    small = gray.resize((cols, rows), Image.LANCZOS)
+    sp = small.load()
+    # edge layer: outlines of face, glasses and clothing give the engraved look
+    big = gray.resize((cols * 3, rows * 3), Image.LANCZOS).filter(ImageFilter.GaussianBlur(0.7))
+    edges = big.filter(ImageFilter.FIND_EDGES).resize((cols, rows), Image.BOX)
+    ep = edges.load()
     out = []
     for y in range(rows):
         line = []
         for x in range(cols):
-            v = tone[x, y]
+            v = sp[x, y]
             ink = (paper - v) / span if ink_is_dark else (v - paper) / span
-            ink = max(0.0, min(1.0, ink)) ** 1.5       # light tones stay airy, darks carry the weight
-            near_border = min(x, y, cols - 1 - x, rows - 1 - y) < 2
-            edge = 0.0 if near_border else min(1.0, edges[x, y] / 30) ** 1.2
-            ink = max(ink, edge * 0.7)
-            line.append(RAMP[0] if ink < 0.13 else RAMP[1 + min(len(RAMP) - 2, int(ink * (len(RAMP) - 1)))])
+            ink = max(0.0, min(1.0, ink)) ** 1.55   # light tones stay airy, darks carry the weight
+            edge = 0.0 if min(x, y, cols - 1 - x, rows - 1 - y) < 2 else min(1.0, ep[x, y] / 75) ** 1.2
+            ink = max(ink, edge * 0.85)
+            line.append(RAMP[0] if ink < 0.05 else RAMP[1 + int(ink * (len(RAMP) - 2))])
         out.append("".join(line).rstrip())
     return out
 
