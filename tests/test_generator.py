@@ -139,6 +139,7 @@ class ReadmeTests(unittest.TestCase):
         block = build.readme_block(load_cfg(), gd.demo_data("RohanKoriya"), 3)
         self.assertIn('href="https://github.com/RohanKoriya"', block)
         self.assertIn("prefers-color-scheme: dark", block)
+        self.assertIn(f'<p align="center"><img src="generated/spacer.svg" width="{build.S.TEXT_COL_PCT}%"', block)
         self.assertEqual(block.count("<picture>"), block.count("</picture>"))
 
 

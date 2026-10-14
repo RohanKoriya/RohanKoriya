@@ -24,46 +24,113 @@ TEXT_COL_PCT = round(TEXT_X / W * 100, 2)      # same position as a percentage, 
 
 def hero(pal, rows: list[str], cfg: dict) -> str:
     cols = max(cfg["portrait_columns"], max((len(r) for r in rows), default=1))
-    pw = 340                                   # portrait drawing width
-    cw = pw / cols                             # character advance
-    fs = cw / 0.6                              # font size for a 0.6em monospace advance
+    pw = 340
+    cw = pw / cols
+    fs = cw / 0.6
     lh = fs
     ph = lh * len(rows)
     body = ""
+
+    # ASCII portrait
     for i, row in enumerate(rows):
         glyphs = [(j, c) for j, c in enumerate(row) if c != " "]
         if not glyphs:
             continue
-        # every glyph gets an explicit x, so columns stay aligned even if a viewer
-        # substitutes a proportional font for the monospace stack
-        xs = " ".join(f"{j * cw:.2f}" for j, _ in glyphs)
-        body += (f'<text x="{xs}" y="{(i + 1) * lh - lh * 0.2:.2f}" font-family="{MONO}" '
-                 f'font-size="{fs:.2f}" fill="{pal["text2"]}">{esc("".join(c for _, c in glyphs))}</text>')
-    # one thin scan line + soft band sweep the portrait; hidden unless SMIL runs
-    body += (f'<clipPath id="clip"><rect width="{pw}" height="{ph:.1f}"/></clipPath>'
-             f'<g clip-path="url(#clip)" opacity="0">'
-             f'<rect x="0" y="-26" width="{pw}" height="26" fill="{pal["accent"]}" opacity="0.10">'
-             f'<animate attributeName="y" values="-26;{ph:.1f};{ph:.1f}" keyTimes="0;0.6;1" dur="8s" repeatCount="indefinite"/></rect>'
-             f'<rect x="0" y="0" width="{pw}" height="1.2" fill="{pal["accent"]}" opacity="0.8">'
-             f'<animate attributeName="y" values="0;{ph:.1f};{ph:.1f}" keyTimes="0;0.6;1" dur="8s" repeatCount="indefinite"/></rect>'
-             f'<animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.04;0.56;0.62;1" dur="8s" repeatCount="indefinite"/>'
-             f'</g>')
-    cap_y = ph + 24
-    body += text(0, cap_y, f"@{cfg['username']}", 11, pal["muted"], MONO, spacing=0.6)
-    body += text(pw, cap_y, "ASCII PORTRAIT", 10, pal["muted"], MONO, anchor="end", spacing=1.4)
 
-    # text column: last intro line shares a baseline with the portrait caption
-    lines = wrap(cfg["intro"], W - TEXT_X - 10, 16)
-    y_end = cap_y
-    y_intro = y_end - 27 * (len(lines) - 1)
-    y_name = y_intro - 64
-    body += text(TEXT_X, y_name - 58, cfg["role"].upper(), 12, pal["accent"], MONO, weight=500, spacing=2.4)
-    body += text(TEXT_X, y_name, cfg["name"], 54, pal["text"], SERIF, weight=500, spacing=-0.8)
-    body += f'<rect x="{TEXT_X}" y="{y_name + 24}" width="28" height="2" fill="{pal["accent"]}"/>'
+        xs = " ".join(f"{j * cw:.2f}" for j, _ in glyphs)
+        body += (
+            f'<text x="{xs}" y="{(i + 1) * lh - lh * 0.2:.2f}" '
+            f'font-family="{MONO}" font-size="{fs:.2f}" '
+            f'fill="{pal["text2"]}">'
+            f'{esc("".join(c for _, c in glyphs))}</text>'
+        )
+
+    # Subtle animated scan line
+    body += (
+        f'<clipPath id="clip"><rect width="{pw}" height="{ph:.1f}"/></clipPath>'
+        f'<g clip-path="url(#clip)" opacity="0">'
+        f'<rect x="0" y="-26" width="{pw}" height="26" '
+        f'fill="{pal["accent"]}" opacity="0.10">'
+        f'<animate attributeName="y" values="-26;{ph:.1f};{ph:.1f}" '
+        f'keyTimes="0;0.6;1" dur="8s" repeatCount="indefinite"/></rect>'
+        f'<rect x="0" y="0" width="{pw}" height="1.2" '
+        f'fill="{pal["accent"]}" opacity="0.8">'
+        f'<animate attributeName="y" values="0;{ph:.1f};{ph:.1f}" '
+        f'keyTimes="0;0.6;1" dur="8s" repeatCount="indefinite"/></rect>'
+        f'<animate attributeName="opacity" values="0;1;1;0;0" '
+        f'keyTimes="0;0.04;0.56;0.62;1" dur="8s" '
+        f'repeatCount="indefinite"/>'
+        f'</g>'
+    )
+
+    # Portrait caption
+    cap_y = ph + 24
+    body += text(
+        0, cap_y, f"@{cfg['username']}", 11,
+        pal["muted"], MONO, spacing=0.6
+    )
+    body += text(
+        pw, cap_y, "ASCII PORTRAIT", 10,
+        pal["muted"], MONO, anchor="end", spacing=1.4
+    )
+
+    # Introduction
+    text_x = TEXT_X
+    text_width = W - text_x - 10
+    lines = wrap(cfg["intro"], text_width, 16)
+
+    role_h = 16
+    name_h = 58
+    intro_line_h = 27
+    links_gap = 25
+    links_h = 20
+
+    # Calculate the entire text group's height, including social links.
+    group_h = (
+        role_h + 57 + name_h + 24 + 43
+        + len(lines) * intro_line_h
+        + links_gap + links_h
+    )
+
+    group_top = max(65, (ph - group_h) / 2)
+
+    role_y = group_top + role_h
+    name_y = role_y + 57
+    rule_y = name_y + 24
+    intro_y = rule_y + 43
+
+    body += text(
+        text_x, role_y, cfg["role"].upper(), 12,
+        pal["accent"], MONO, weight=500, spacing=2.4
+    )
+    body += text(
+        text_x, name_y, cfg["name"], 54,
+        pal["text"], SERIF, weight=500, spacing=-0.8
+    )
+    body += (
+        f'<rect x="{text_x}" y="{rule_y}" width="28" height="2" '
+        f'fill="{pal["accent"]}"/>'
+    )
+
+    # Intro description
     for i, line in enumerate(lines):
-        body += text(TEXT_X, y_intro + 27 * i, line, 16, pal["text2"], SANS)
-    return doc(W, cap_y + 10, body, f"{cfg['name']}, {cfg['role']}",
-               f"ASCII portrait of {cfg['name']}. {cfg['name']}, {cfg['role']}. {cfg['intro']}")
+        body += text(
+            text_x, intro_y + intro_line_h * i,
+            line, 16, pal["text2"], SANS
+        )
+
+    
+    height = cap_y + 10
+
+    return doc(
+        W,
+        height,
+        body,
+        f"{cfg['name']}, {cfg['role']}",
+        f"ASCII portrait of {cfg['name']}. "
+        f"{cfg['name']}, {cfg['role']}. {cfg['intro']}"
+    )
+
 
 
 # ── 01 · Activity ───────────────────────────────────────────────────

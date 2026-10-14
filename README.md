@@ -5,8 +5,7 @@
   <source media="(prefers-color-scheme: dark)" srcset="generated/hero-dark.svg">
   <img width="100%" alt="Rohan Koriya, Software Developer. ASCII portrait and introduction." src="generated/hero-light.svg">
 </picture>
-<br>
-<img src="generated/spacer.svg" width="41.67%" height="1" alt=""><a href="https://github.com/RohanKoriya">GitHub&nbsp;↗</a> &nbsp;·&nbsp; <a href="https://www.linkedin.com/in/rohankoriya/">LinkedIn&nbsp;↗</a> &nbsp;·&nbsp; <a href="mailto:koriyarohan123@gmail.com">Email&nbsp;↗</a>
+<p align="center"><img src="generated/spacer.svg" width="41.67%" height="1" alt=""><a href="https://github.com/RohanKoriya">GitHub&nbsp;↗</a> &nbsp;·&nbsp; <a href="https://www.linkedin.com/in/rohankoriya/">LinkedIn&nbsp;↗</a> &nbsp;·&nbsp; <a href="mailto:koriyarohan123@gmail.com">Email&nbsp;↗</a></p>
 </div>
 
 <br>
