@@ -106,7 +106,7 @@ class RenderTests(unittest.TestCase):
             self.assertEqual(low.count("http://"), 1, name)                          # only the xmlns
 
     def test_user_text_is_escaped(self):
-        svg = self.files["hero-text-dark.svg"]
+        svg = self.files["hero-dark.svg"]
         self.assertNotIn("<script", svg)
         self.assertIn("&lt;script&gt;", svg)
 
@@ -117,7 +117,7 @@ class RenderTests(unittest.TestCase):
 
     def test_static_state_is_complete(self):
         """Scan line must be hidden by default; snake must start inside the grid."""
-        svg = self.files["hero-portrait-dark.svg"]
+        svg = self.files["hero-dark.svg"]
         self.assertIn('opacity="0"', svg)
         self.assertNotIn('x="0" y="0" width="14.1"', self.files["snake-dark.svg"])
 
@@ -139,7 +139,7 @@ class ReadmeTests(unittest.TestCase):
         block = build.readme_block(load_cfg(), gd.demo_data("RohanKoriya"), 3)
         self.assertIn('href="https://github.com/RohanKoriya"', block)
         self.assertIn("prefers-color-scheme: dark", block)
-        self.assertIn(f'<p align="center"><img src="generated/spacer.svg" width="{build.S.TEXT_COL_PCT}%"', block)
+        self.assertIn(f'<p align="left"><img src="generated/spacer.svg" width="{build.S.TEXT_COL_PCT}%"', block)
         self.assertEqual(block.count("<picture>"), block.count("</picture>"))
 
 
