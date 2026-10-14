@@ -264,17 +264,58 @@ def projects_head(pal) -> str:
 
 def project_row(pal, i: int, repo: dict) -> str:
     desc = (repo["description"] or "").strip()
-    out = text(0, 40, f"{i:02d}", 12, pal["muted"], MONO)
-    out += text(44, 40 if desc else 46, truncate(repo["name"], 430, 19), 19, pal["text"], SANS, weight=600)
+
+    # Project number and title
+    out = text(
+        0, 35, f"{i:02d}", 11,
+        pal["muted"], MONO
+    )
+
+    out += text(
+        44, 34,
+        truncate(repo["name"], 400, 18),
+        19, pal["text"], SANS, weight=600
+    )
+
+    # Description below the title
     if desc:
-        out += text(44, 64, truncate(desc, 600, 14), 14, pal["text2"], SANS)
-    bits = [b for b in (repo["language"], f"★ {repo['stars']}",
-                        f"{repo['forks']} forks" if repo["forks"] else "", month_year(repo["pushed_at"])) if b]
-    out += text(W - 34, 40, "  ·  ".join(bits), 12, pal["text2"], MONO, anchor="end")
-    out += text(W, 42, "↗", 20, pal["accent"], SANS, anchor="end")
-    out += rule(0, 83, W, pal)
-    return doc(W, 84, out, repo["name"],
-               f"{repo['name']}: {desc or 'no description'}. {', '.join(bits)}.")
+        out += text(
+            44, 59,
+            truncate(desc, 430, 13),
+            13, pal["text2"], SANS
+        )
+
+    # Repository metadata
+    bits = [
+        b for b in (
+            repo["language"],
+            f"★ {repo['stars']}",
+            f"{repo['forks']} forks" if repo["forks"] else "",
+            month_year(repo["pushed_at"]),
+        ) if b
+    ]
+
+    out += text(
+        W - 42, 34,
+        "  ·  ".join(bits),
+        11, pal["muted"], MONO, anchor="end"
+    )
+
+    # Subtle arrow
+    out += text(
+        W, 35, "↗", 17,
+        pal["accent"], SANS, anchor="end"
+    )
+
+    # Separator
+    out += rule(0, 80, W, pal)
+
+    return doc(
+        W, 82, out,
+        repo["name"],
+        f"{repo['name']}: {desc or 'No description available'}. "
+        f"{', '.join(bits)}."
+    )
 
 
 # ── 05 · Snake ──────────────────────────────────────────────────────
