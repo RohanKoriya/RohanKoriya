@@ -52,11 +52,12 @@ def hero(pal, rows: list[str], cfg: dict) -> str:
     body += text(0, cap_y, f"@{cfg['username']}", 11, pal["muted"], MONO, spacing=0.6)
     body += text(pw, cap_y, "ASCII PORTRAIT", 10, pal["muted"], MONO, anchor="end", spacing=1.4)
 
-    # text column: last intro line shares a baseline with the portrait caption
+    # text column: vertically centred on the portrait (nudged slightly low, because the
+    # clickable link row sits directly under the image, at the bottom of this column)
     lines = wrap(cfg["intro"], W - TEXT_X - 10, 16)
-    y_end = cap_y
-    y_intro = y_end - 27 * (len(lines) - 1)
-    y_name = y_intro - 64
+    block_h = 136 + 27 * (len(lines) - 1)                 # eyebrow top -> last intro line
+    y_name = ph / 2 + 14 - block_h / 2 + 67
+    y_intro = y_name + 64
     body += text(TEXT_X, y_name - 58, cfg["role"].upper(), 12, pal["accent"], MONO, weight=500, spacing=2.4)
     body += text(TEXT_X, y_name, cfg["name"], 54, pal["text"], SERIF, weight=500, spacing=-0.8)
     body += f'<rect x="{TEXT_X}" y="{y_name + 24}" width="28" height="2" fill="{pal["accent"]}"/>'
