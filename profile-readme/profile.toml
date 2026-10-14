@@ -1,0 +1,55 @@
+# ─────────────────────────────────────────────────────────────────────
+#  profile.toml — the ONLY file you normally need to edit.
+#  Everything on your profile (text, links, stack, projects) is read
+#  from here; statistics always come live from GitHub.
+# ─────────────────────────────────────────────────────────────────────
+
+[identity]
+username = "RohanKoriya"
+name     = "Rohan Koriya"
+role     = "Software Developer"
+intro    = "I build real-world web products with the MERN stack: MongoDB, Express, React and Node.js. I enjoy solving problems more than memorizing solutions, and every project teaches me something new."
+
+[links]                      # shown under the introduction (https:// or mailto: only)
+GitHub   = "https://github.com/RohanKoriya"
+LinkedIn = "https://www.linkedin.com/in/rohankoriya/"
+Email    = "mailto:koriyarohan123@gmail.com"
+
+# Grouped, typographic tech stack. Add/remove groups freely (max 6 groups).
+[[stack]]
+label = "Languages"
+items = ["JavaScript", "TypeScript", "Python", "Java", "C++"]
+
+[[stack]]
+label = "Frontend"
+items = ["React", "HTML5", "CSS3"]
+
+[[stack]]
+label = "Backend"
+items = ["Node.js", "Express"]
+
+[[stack]]
+label = "Data"
+items = ["MongoDB"]
+
+[learning]
+title = "Currently learning"
+items = ["System design", "Machine learning & AI", "Building AI projects"]
+
+[projects]
+# "auto" picks your most-starred public, non-fork repositories.
+# The profile repository itself (named like your username) is skipped.
+mode    = "auto"
+count   = 3
+pin     = []                 # e.g. ["Smart-Leads-Dashboard", "SEO-Rank-Tracker"] to force order
+exclude = []
+# Descriptions come from each repository's "About" text on GitHub.
+# Optional manual overrides:  [projects.descriptions]  Repo-Name = "text"
+
+[footer]
+quote = "Code. Learn. Build. Repeat."
+
+[portrait]
+# Used in this order: assets/portrait.(png|jpg|jpeg|webp) if you add a photo,
+# otherwise your GitHub avatar, otherwise the cached generated/portrait.txt
+columns = 92

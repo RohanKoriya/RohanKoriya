@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Profile preview</title>
+<style>
+  body{margin:0;background:#0d1117;font:14px system-ui,sans-serif;color:#9da7b3}
+  body.light{background:#fff;color:#57606a}
+  .bar{position:sticky;top:0;display:flex;gap:12px;justify-content:space-between;align-items:center;
+       padding:10px 24px;background:inherit;border-bottom:1px solid #30363d;z-index:2}
+  body.light .bar{border-color:#d0d7de}
+  button{font:inherit;padding:6px 14px;border-radius:6px;border:1px solid #30363d;background:transparent;color:inherit;cursor:pointer}
+  main{max-width:880px;margin:0 auto;padding:24px 24px 64px}
+  img{display:block;width:100%}
+  .hero{display:flex;align-items:center;gap:2%;margin-bottom:24px}
+  .hero .p{width:40%}.hero .t{width:58%}
+  .links a{color:#58a6ff;text-decoration:none;margin-right:18px}
+  body.light .links a{color:#0969da}
+  .l{display:none}body.light .l{display:block}body.light .d{display:none}
+  section{margin:0 0 24px}
+</style></head>
+<body>
+<div class="bar"><span>Local preview: run <code>python -m generator --demo</code> (or with a token) to refresh</span>
+<button id="t">Switch to light</button></div>
+<main id="m"></main>
+<script>
+  // Local-only helper (GitHub never runs this). It just stacks the generated SVGs like README.md does.
+  const pair = (n, cls = "") => `<div class="${cls}"><img class="d" src="generated/${n}-dark.svg" alt="" onerror="this.parentNode.remove()">` +
+                                 `<img class="l" src="generated/${n}-light.svg" alt=""></div>`;
+  const parts = [`<div class="hero"><div class="p">${pair("hero-portrait")}</div>
+    <div class="t">${pair("hero-text")}<p class="links"><a>GitHub ↗</a><a>LinkedIn ↗</a><a>Email ↗</a></p></div></div>`];
+  ["activity","overview","stack","projects-head","project-1","project-2","project-3","project-4","project-5","project-6","snake","footer"]
+    .forEach(n => parts.push(`<section>${pair(n)}</section>`));
+  document.getElementById("m").innerHTML = parts.join("");
+  const b = document.getElementById("t");
+  b.onclick = () => { document.body.classList.toggle("light"); b.textContent = document.body.classList.contains("light") ? "Switch to dark" : "Switch to light"; };
+</script></body></html>
