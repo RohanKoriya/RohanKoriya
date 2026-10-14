@@ -30,22 +30,22 @@
   <source media="(prefers-color-scheme: dark)" srcset="generated/projects-head-dark.svg">
   <img width="100%" alt="Projects" src="generated/projects-head-light.svg">
 </picture>
-<a href="https://github.com/RohanKoriya/sample-project-one">
+<a href="https://github.com/RohanKoriya/Ranklytics-AI-Powered-SEO-Analytics-Platform">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="generated/project-1-dark.svg">
-  <img width="100%" alt="sample-project-one" src="generated/project-1-light.svg">
+  <img width="100%" alt="Ranklytics-AI-Powered-SEO-Analytics-Platform" src="generated/project-1-light.svg">
 </picture>
 </a>
-<a href="https://github.com/RohanKoriya/sample-project-two">
+<a href="https://github.com/RohanKoriya/LeadFlow-CRM-Platform">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="generated/project-2-dark.svg">
-  <img width="100%" alt="sample-project-two" src="generated/project-2-light.svg">
+  <img width="100%" alt="LeadFlow-CRM-Platform" src="generated/project-2-light.svg">
 </picture>
 </a>
-<a href="https://github.com/RohanKoriya/sample-project-three">
+<a href="https://github.com/RohanKoriya/ChatSphere">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="generated/project-3-dark.svg">
-  <img width="100%" alt="sample-project-three" src="generated/project-3-light.svg">
+  <img width="100%" alt="ChatSphere" src="generated/project-3-light.svg">
 </picture>
 </a>
 
