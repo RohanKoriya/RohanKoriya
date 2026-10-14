@@ -17,13 +17,17 @@ from .kit import (MONO, SANS, SERIF, W, doc, esc, header, month_year, rule, shor
 NBSP = "\u00a0"
 
 
-# ── 00 · Hero ───────────────────────────────────────────────────────
-def hero_portrait(pal, rows: list[str], cfg: dict) -> str:
+# ── 00 · Hero (portrait + introduction as ONE image, so GitHub cannot reflow it) ──
+TEXT_X = 400                                   # left edge of the text column (also used for the link indent)
+TEXT_COL_PCT = round(TEXT_X / W * 100, 2)      # same position as a percentage, for the README link row
+
+
+def hero(pal, rows: list[str], cfg: dict) -> str:
     cols = max(cfg["portrait_columns"], max((len(r) for r in rows), default=1))
-    pw = 340                                   # drawing width
+    pw = 340                                   # portrait drawing width
     cw = pw / cols                             # character advance
     fs = cw / 0.6                              # font size for a 0.6em monospace advance
-    lh = fs                                    # line height
+    lh = fs
     ph = lh * len(rows)
     body = ""
     for i, row in enumerate(rows):
@@ -36,31 +40,30 @@ def hero_portrait(pal, rows: list[str], cfg: dict) -> str:
         body += (f'<text x="{xs}" y="{(i + 1) * lh - lh * 0.2:.2f}" font-family="{MONO}" '
                  f'font-size="{fs:.2f}" fill="{pal["text2"]}">{esc("".join(c for _, c in glyphs))}</text>')
     # one thin scan line + soft band sweep the portrait; hidden unless SMIL runs
-    scan = (f'<clipPath id="clip"><rect width="{pw}" height="{ph:.1f}"/></clipPath>'
-            f'<g clip-path="url(#clip)" opacity="0">'
-            f'<rect x="0" y="-26" width="{pw}" height="26" fill="{pal["accent"]}" opacity="0.10">'
-            f'<animate attributeName="y" values="-26;{ph:.1f};{ph:.1f}" keyTimes="0;0.6;1" dur="8s" repeatCount="indefinite"/></rect>'
-            f'<rect x="0" y="0" width="{pw}" height="1.2" fill="{pal["accent"]}" opacity="0.8">'
-            f'<animate attributeName="y" values="0;{ph:.1f};{ph:.1f}" keyTimes="0;0.6;1" dur="8s" repeatCount="indefinite"/></rect>'
-            f'<animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.04;0.56;0.62;1" dur="8s" repeatCount="indefinite"/>'
-            f'</g>')
-    cap_y = ph + 26
-    caption = (text(0, cap_y, f"@{cfg['username']}", 11, pal["muted"], MONO, spacing=0.6)
-               + text(pw, cap_y, "ASCII PORTRAIT", 10, pal["muted"], MONO, anchor="end", spacing=1.4))
-    return doc(pw, cap_y + 8, body + scan + caption, f"Portrait of {cfg['name']}",
-               f"ASCII portrait of {cfg['name']}")
+    body += (f'<clipPath id="clip"><rect width="{pw}" height="{ph:.1f}"/></clipPath>'
+             f'<g clip-path="url(#clip)" opacity="0">'
+             f'<rect x="0" y="-26" width="{pw}" height="26" fill="{pal["accent"]}" opacity="0.10">'
+             f'<animate attributeName="y" values="-26;{ph:.1f};{ph:.1f}" keyTimes="0;0.6;1" dur="8s" repeatCount="indefinite"/></rect>'
+             f'<rect x="0" y="0" width="{pw}" height="1.2" fill="{pal["accent"]}" opacity="0.8">'
+             f'<animate attributeName="y" values="0;{ph:.1f};{ph:.1f}" keyTimes="0;0.6;1" dur="8s" repeatCount="indefinite"/></rect>'
+             f'<animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.04;0.56;0.62;1" dur="8s" repeatCount="indefinite"/>'
+             f'</g>')
+    cap_y = ph + 24
+    body += text(0, cap_y, f"@{cfg['username']}", 11, pal["muted"], MONO, spacing=0.6)
+    body += text(pw, cap_y, "ASCII PORTRAIT", 10, pal["muted"], MONO, anchor="end", spacing=1.4)
 
-
-def hero_text(pal, cfg: dict) -> str:
-    w = 520
-    out = text(0, 70, cfg["role"].upper(), 12, pal["accent"], MONO, weight=500, spacing=2.4)
-    out += text(0, 128, cfg["name"], 54, pal["text"], SERIF, weight=500, spacing=-0.8)
-    out += f'<rect x="0" y="152" width="28" height="2" fill="{pal["accent"]}"/>'
-    y = 192
-    for line in wrap(cfg["intro"], w - 10, 16):
-        out += text(0, y, line, 16, pal["text2"], SANS)
-        y += 27
-    return doc(w, y + 4, out, cfg["name"], f"{cfg['name']}, {cfg['role']}. {cfg['intro']}")
+    # text column: last intro line shares a baseline with the portrait caption
+    lines = wrap(cfg["intro"], W - TEXT_X - 10, 16)
+    y_end = cap_y
+    y_intro = y_end - 27 * (len(lines) - 1)
+    y_name = y_intro - 64
+    body += text(TEXT_X, y_name - 58, cfg["role"].upper(), 12, pal["accent"], MONO, weight=500, spacing=2.4)
+    body += text(TEXT_X, y_name, cfg["name"], 54, pal["text"], SERIF, weight=500, spacing=-0.8)
+    body += f'<rect x="{TEXT_X}" y="{y_name + 24}" width="28" height="2" fill="{pal["accent"]}"/>'
+    for i, line in enumerate(lines):
+        body += text(TEXT_X, y_intro + 27 * i, line, 16, pal["text2"], SANS)
+    return doc(W, cap_y + 10, body, f"{cfg['name']}, {cfg['role']}",
+               f"ASCII portrait of {cfg['name']}. {cfg['name']}, {cfg['role']}. {cfg['intro']}")
 
 
 # ── 01 · Activity ───────────────────────────────────────────────────
