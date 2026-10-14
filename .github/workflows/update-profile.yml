@@ -2,21 +2,22 @@ name: Update profile
 
 on:
   schedule:
-    - cron: "17 3 * * *"          # daily, 03:17 UTC (off-peak minute on purpose)
-  workflow_dispatch:               # "Run workflow" button in the Actions tab
-  repository_dispatch:             # optional: refresh when another repo pings this one
+    - cron: "17 3 * * *" # daily, 03:17 UTC (off-peak minute on purpose)
+  workflow_dispatch: # "Run workflow" button in the Actions tab
+  repository_dispatch: # optional: refresh when another repo pings this one
     types: [profile-refresh]
   push:
     branches: [main]
     paths:
       - "generator/**"
+      - "tests/**"
       - "profile.toml"
       - "requirements.txt"
       - "assets/**"
       - ".github/workflows/update-profile.yml"
 
 permissions:
-  contents: read                   # least privilege by default; the job raises it below
+  contents: read # least privilege by default; the job raises it below
 
 concurrency:
   group: update-profile
@@ -27,7 +28,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
-      contents: write              # only needed to commit the regenerated files
+      contents: write # only needed to commit the regenerated files
     steps:
       - uses: actions/checkout@v4
 
