@@ -1,22 +1,34 @@
 {
- "fetched_at": "2026-10-26T08:59:00+00:00",
+ "fetched_at": "2026-10-27T09:02:39+00:00",
  "demo": false,
  "username": "RohanKoriya",
  "profile": {
   "name": "Rohan Koriya",
   "followers": 0,
   "following": 0,
-  "public_repos": 13,
+  "public_repos": 14,
   "avatar_url": "https://avatars.githubusercontent.com/u/198713400?v=4"
  },
  "repos": [
+  {
+   "name": "photo-gallery",
+   "description": "",
+   "language": "JavaScript",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2026-10-27T07:28:42Z",
+   "url": "https://github.com/RohanKoriya/photo-gallery",
+   "fork": false,
+   "archived": false,
+   "homepage": ""
+  },
   {
    "name": "Rohan-Portfolio",
    "description": "",
    "language": "JavaScript",
    "stars": 0,
    "forks": 0,
-   "pushed_at": "2026-10-25T13:37:36Z",
+   "pushed_at": "2026-10-26T11:39:33Z",
    "url": "https://github.com/RohanKoriya/Rohan-Portfolio",
    "fork": false,
    "archived": false,
@@ -28,7 +40,7 @@
    "language": "Python",
    "stars": 1,
    "forks": 0,
-   "pushed_at": "2026-10-25T08:27:46Z",
+   "pushed_at": "2026-10-26T08:59:01Z",
    "url": "https://github.com/RohanKoriya/RohanKoriya",
    "fork": false,
    "archived": false,
@@ -170,7 +182,7 @@
  "languages": [
   [
    "JavaScript",
-   1326887
+   1337517
   ],
   [
    "TypeScript",
@@ -182,11 +194,11 @@
   ],
   [
    "CSS",
-   39589
+   40105
   ],
   [
    "HTML",
-   18675
+   19040
   ],
   [
    "Java",
@@ -198,7 +210,7 @@
   ]
  ],
  "calendar": {
-  "totalContributions": 255,
+  "totalContributions": 261,
   "weeks": [
    {
     "contributionDays": [
@@ -2236,23 +2248,28 @@
       "weekday": 0
      },
      {
-      "contributionCount": 0,
+      "contributionCount": 1,
       "date": "2026-10-26",
       "weekday": 1
+     },
+     {
+      "contributionCount": 5,
+      "date": "2026-10-27",
+      "weekday": 2
      }
     ]
    }
   ]
  },
  "totals": {
-  "commits": 210,
+  "commits": 215,
   "pull_requests": 14,
   "issues": 0,
   "reviews": 0
  },
  "streaks": {
-  "current": 2,
+  "current": 4,
   "longest": 7,
-  "active_days": 56
+  "active_days": 58
  }
 }
