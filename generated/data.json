@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-10-31T09:41:19+00:00",
+ "fetched_at": "2026-11-01T10:30:04+00:00",
  "demo": false,
  "username": "RohanKoriya",
  "profile": {
@@ -11,28 +11,28 @@
  },
  "repos": [
   {
-   "name": "Rohan-Portfolio",
-   "description": "",
-   "language": "JavaScript",
-   "stars": 0,
-   "forks": 0,
-   "pushed_at": "2026-10-30T12:17:25Z",
-   "url": "https://github.com/RohanKoriya/Rohan-Portfolio",
-   "fork": false,
-   "archived": false,
-   "homepage": "https://rohan-portfolio-rust.vercel.app"
-  },
-  {
    "name": "RohanKoriya",
    "description": "",
    "language": "Python",
    "stars": 1,
    "forks": 0,
-   "pushed_at": "2026-10-30T10:04:19Z",
+   "pushed_at": "2026-11-01T09:17:19Z",
    "url": "https://github.com/RohanKoriya/RohanKoriya",
    "fork": false,
    "archived": false,
    "homepage": ""
+  },
+  {
+   "name": "Rohan-Portfolio",
+   "description": "",
+   "language": "JavaScript",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2026-11-01T07:21:03Z",
+   "url": "https://github.com/RohanKoriya/Rohan-Portfolio",
+   "fork": false,
+   "archived": false,
+   "homepage": "https://rohan-portfolio-rust.vercel.app"
   },
   {
    "name": "photo-gallery",
@@ -182,7 +182,7 @@
  "languages": [
   [
    "JavaScript",
-   1349206
+   1351397
   ],
   [
    "TypeScript",
@@ -210,47 +210,8 @@
   ]
  ],
  "calendar": {
-  "totalContributions": 265,
+  "totalContributions": 269,
   "weeks": [
-   {
-    "contributionDays": [
-     {
-      "contributionCount": 0,
-      "date": "2025-10-26",
-      "weekday": 0
-     },
-     {
-      "contributionCount": 0,
-      "date": "2025-10-27",
-      "weekday": 1
-     },
-     {
-      "contributionCount": 0,
-      "date": "2025-10-28",
-      "weekday": 2
-     },
-     {
-      "contributionCount": 0,
-      "date": "2025-10-29",
-      "weekday": 3
-     },
-     {
-      "contributionCount": 0,
-      "date": "2025-10-30",
-      "weekday": 4
-     },
-     {
-      "contributionCount": 0,
-      "date": "2025-10-31",
-      "weekday": 5
-     },
-     {
-      "contributionCount": 0,
-      "date": "2025-11-01",
-      "weekday": 6
-     }
-    ]
-   },
    {
     "contributionDays": [
      {
@@ -2273,23 +2234,32 @@
       "weekday": 5
      },
      {
-      "contributionCount": 0,
+      "contributionCount": 3,
       "date": "2026-10-31",
       "weekday": 6
+     }
+    ]
+   },
+   {
+    "contributionDays": [
+     {
+      "contributionCount": 1,
+      "date": "2026-11-01",
+      "weekday": 0
      }
     ]
    }
   ]
  },
  "totals": {
-  "commits": 219,
+  "commits": 223,
   "pull_requests": 14,
   "issues": 0,
   "reviews": 0
  },
  "streaks": {
-  "current": 7,
-  "longest": 7,
-  "active_days": 61
+  "current": 9,
+  "longest": 9,
+  "active_days": 63
  }
 }
