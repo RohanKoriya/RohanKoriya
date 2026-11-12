@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-11-11T11:01:15+00:00",
+ "fetched_at": "2026-11-12T11:16:25+00:00",
  "demo": false,
  "username": "RohanKoriya",
  "profile": {
@@ -11,28 +11,28 @@
  },
  "repos": [
   {
-   "name": "RohanKoriya",
-   "description": "",
-   "language": "Python",
-   "stars": 1,
-   "forks": 0,
-   "pushed_at": "2026-11-10T11:15:37Z",
-   "url": "https://github.com/RohanKoriya/RohanKoriya",
-   "fork": false,
-   "archived": false,
-   "homepage": ""
-  },
-  {
    "name": "Rohan-Portfolio",
    "description": "",
    "language": "JavaScript",
    "stars": 0,
    "forks": 0,
-   "pushed_at": "2026-11-04T11:24:29Z",
+   "pushed_at": "2026-11-12T07:56:17Z",
    "url": "https://github.com/RohanKoriya/Rohan-Portfolio",
    "fork": false,
    "archived": false,
    "homepage": "https://rohan-portfolio-rust.vercel.app"
+  },
+  {
+   "name": "RohanKoriya",
+   "description": "",
+   "language": "Python",
+   "stars": 1,
+   "forks": 0,
+   "pushed_at": "2026-11-11T11:01:17Z",
+   "url": "https://github.com/RohanKoriya/RohanKoriya",
+   "fork": false,
+   "archived": false,
+   "homepage": ""
   },
   {
    "name": "photo-gallery",
@@ -182,7 +182,7 @@
  "languages": [
   [
    "JavaScript",
-   1354113
+   1349239
   ],
   [
    "TypeScript",
@@ -210,7 +210,7 @@
   ]
  ],
  "calendar": {
-  "totalContributions": 269,
+  "totalContributions": 270,
   "weeks": [
    {
     "contributionDays": [
@@ -2261,20 +2261,25 @@
       "contributionCount": 0,
       "date": "2026-11-11",
       "weekday": 3
+     },
+     {
+      "contributionCount": 1,
+      "date": "2026-11-12",
+      "weekday": 4
      }
     ]
    }
   ]
  },
  "totals": {
-  "commits": 228,
+  "commits": 229,
   "pull_requests": 14,
   "issues": 0,
   "reviews": 0
  },
  "streaks": {
-  "current": 0,
+  "current": 1,
   "longest": 12,
-  "active_days": 65
+  "active_days": 66
  }
 }
