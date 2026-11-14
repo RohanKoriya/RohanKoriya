@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-11-13T11:02:12+00:00",
+ "fetched_at": "2026-11-14T10:29:22+00:00",
  "demo": false,
  "username": "RohanKoriya",
  "profile": {
@@ -16,7 +16,7 @@
    "language": "JavaScript",
    "stars": 0,
    "forks": 0,
-   "pushed_at": "2026-11-13T10:28:00Z",
+   "pushed_at": "2026-11-14T07:59:43Z",
    "url": "https://github.com/RohanKoriya/Rohan-Portfolio",
    "fork": false,
    "archived": false,
@@ -28,7 +28,7 @@
    "language": "Python",
    "stars": 1,
    "forks": 0,
-   "pushed_at": "2026-11-12T11:16:26Z",
+   "pushed_at": "2026-11-13T11:02:13Z",
    "url": "https://github.com/RohanKoriya/RohanKoriya",
    "fork": false,
    "archived": false,
@@ -182,7 +182,7 @@
  "languages": [
   [
    "JavaScript",
-   1351151
+   1353203
   ],
   [
    "TypeScript",
@@ -210,7 +210,7 @@
   ]
  ],
  "calendar": {
-  "totalContributions": 278,
+  "totalContributions": 284,
   "weeks": [
    {
     "contributionDays": [
@@ -2268,23 +2268,28 @@
       "weekday": 4
      },
      {
-      "contributionCount": 5,
+      "contributionCount": 8,
       "date": "2026-11-13",
       "weekday": 5
+     },
+     {
+      "contributionCount": 3,
+      "date": "2026-11-14",
+      "weekday": 6
      }
     ]
    }
   ]
  },
  "totals": {
-  "commits": 237,
+  "commits": 243,
   "pull_requests": 14,
   "issues": 0,
   "reviews": 0
  },
  "streaks": {
-  "current": 2,
+  "current": 3,
   "longest": 12,
-  "active_days": 67
+  "active_days": 68
  }
 }
