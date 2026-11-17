@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-11-16T11:24:33+00:00",
+ "fetched_at": "2026-11-17T11:55:22+00:00",
  "demo": false,
  "username": "RohanKoriya",
  "profile": {
@@ -16,7 +16,7 @@
    "language": "JavaScript",
    "stars": 1,
    "forks": 0,
-   "pushed_at": "2026-11-16T10:12:13Z",
+   "pushed_at": "2026-11-17T11:41:05Z",
    "url": "https://github.com/RohanKoriya/Rohan-Portfolio",
    "fork": false,
    "archived": false,
@@ -28,7 +28,7 @@
    "language": "Python",
    "stars": 1,
    "forks": 0,
-   "pushed_at": "2026-11-15T10:57:37Z",
+   "pushed_at": "2026-11-16T11:24:34Z",
    "url": "https://github.com/RohanKoriya/RohanKoriya",
    "fork": false,
    "archived": false,
@@ -210,7 +210,7 @@
   ]
  ],
  "calendar": {
-  "totalContributions": 292,
+  "totalContributions": 293,
   "weeks": [
    {
     "contributionDays": [
@@ -2251,20 +2251,25 @@
       "contributionCount": 2,
       "date": "2026-11-16",
       "weekday": 1
+     },
+     {
+      "contributionCount": 1,
+      "date": "2026-11-17",
+      "weekday": 2
      }
     ]
    }
   ]
  },
  "totals": {
-  "commits": 251,
+  "commits": 252,
   "pull_requests": 14,
   "issues": 0,
   "reviews": 0
  },
  "streaks": {
-  "current": 5,
+  "current": 6,
   "longest": 12,
-  "active_days": 70
+  "active_days": 71
  }
 }
