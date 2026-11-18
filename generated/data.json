@@ -1,12 +1,12 @@
 {
- "fetched_at": "2026-10-14T09:53:18+00:00",
+ "fetched_at": "2026-11-18T07:30:52+00:00",
  "demo": false,
  "username": "RohanKoriya",
  "profile": {
   "name": "Rohan Koriya",
   "followers": 0,
   "following": 0,
-  "public_repos": 13,
+  "public_repos": 14,
   "avatar_url": "https://avatars.githubusercontent.com/u/198713400?v=4"
  },
  "repos": [
@@ -16,7 +16,7 @@
    "language": "Python",
    "stars": 1,
    "forks": 0,
-   "pushed_at": "2026-10-14T09:53:02Z",
+   "pushed_at": "2026-11-17T11:55:24Z",
    "url": "https://github.com/RohanKoriya/RohanKoriya",
    "fork": false,
    "archived": false,
@@ -26,13 +26,25 @@
    "name": "Rohan-Portfolio",
    "description": "",
    "language": "JavaScript",
-   "stars": 0,
+   "stars": 1,
    "forks": 0,
-   "pushed_at": "2026-10-12T07:05:00Z",
+   "pushed_at": "2026-11-17T11:41:05Z",
    "url": "https://github.com/RohanKoriya/Rohan-Portfolio",
    "fork": false,
    "archived": false,
    "homepage": "https://rohan-portfolio-rust.vercel.app"
+  },
+  {
+   "name": "photo-gallery",
+   "description": "",
+   "language": "JavaScript",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2026-10-27T07:28:42Z",
+   "url": "https://github.com/RohanKoriya/photo-gallery",
+   "fork": false,
+   "archived": false,
+   "homepage": ""
   },
   {
    "name": "Ranklytics-AI-Powered-SEO-Analytics-Platform",
@@ -170,7 +182,7 @@
  "languages": [
   [
    "JavaScript",
-   1328725
+   1365299
   ],
   [
    "TypeScript",
@@ -178,15 +190,15 @@
   ],
   [
    "Python",
-   122507
+   124287
   ],
   [
    "CSS",
-   39589
+   47949
   ],
   [
    "HTML",
-   18675
+   19040
   ],
   [
    "Java",
@@ -198,203 +210,8 @@
   ]
  ],
  "calendar": {
-  "totalContributions": 244,
+  "totalContributions": 293,
   "weeks": [
-   {
-    "contributionDays": [
-     {
-      "contributionCount": 0,
-      "date": "2025-10-12",
-      "weekday": 0
-     },
-     {
-      "contributionCount": 0,
-      "date": "2025-10-13",
-      "weekday": 1
-     },
-     {
-      "contributionCount": 0,
-      "date": "2025-10-14",
-      "weekday": 2
-     },
-     {
-      "contributionCount": 0,
-      "date": "2025-10-15",
-      "weekday": 3
-     },
-     {
-      "contributionCount": 0,
-      "date": "2025-10-16",
-      "weekday": 4
-     },
-     {
-      "contributionCount": 0,
-      "date": "2025-10-17",
-      "weekday": 5
-     },
-     {
-      "contributionCount": 0,
-      "date": "2025-10-18",
-      "weekday": 6
-     }
-    ]
-   },
-   {
-    "contributionDays": [
-     {
-      "contributionCount": 0,
-      "date": "2025-10-19",
-      "weekday": 0
-     },
-     {
-      "contributionCount": 0,
-      "date": "2025-10-20",
-      "weekday": 1
-     },
-     {
-      "contributionCount": 0,
-      "date": "2025-10-21",
-      "weekday": 2
-     },
-     {
-      "contributionCount": 0,
-      "date": "2025-10-22",
-      "weekday": 3
-     },
-     {
-      "contributionCount": 0,
-      "date": "2025-10-23",
-      "weekday": 4
-     },
-     {
-      "contributionCount": 0,
-      "date": "2025-10-24",
-      "weekday": 5
-     },
-     {
-      "contributionCount": 0,
-      "date": "2025-10-25",
-      "weekday": 6
-     }
-    ]
-   },
-   {
-    "contributionDays": [
-     {
-      "contributionCount": 0,
-      "date": "2025-10-26",
-      "weekday": 0
-     },
-     {
-      "contributionCount": 0,
-      "date": "2025-10-27",
-      "weekday": 1
-     },
-     {
-      "contributionCount": 0,
-      "date": "2025-10-28",
-      "weekday": 2
-     },
-     {
-      "contributionCount": 0,
-      "date": "2025-10-29",
-      "weekday": 3
-     },
-     {
-      "contributionCount": 0,
-      "date": "2025-10-30",
-      "weekday": 4
-     },
-     {
-      "contributionCount": 0,
-      "date": "2025-10-31",
-      "weekday": 5
-     },
-     {
-      "contributionCount": 0,
-      "date": "2025-11-01",
-      "weekday": 6
-     }
-    ]
-   },
-   {
-    "contributionDays": [
-     {
-      "contributionCount": 0,
-      "date": "2025-11-02",
-      "weekday": 0
-     },
-     {
-      "contributionCount": 0,
-      "date": "2025-11-03",
-      "weekday": 1
-     },
-     {
-      "contributionCount": 0,
-      "date": "2025-11-04",
-      "weekday": 2
-     },
-     {
-      "contributionCount": 5,
-      "date": "2025-11-05",
-      "weekday": 3
-     },
-     {
-      "contributionCount": 0,
-      "date": "2025-11-06",
-      "weekday": 4
-     },
-     {
-      "contributionCount": 0,
-      "date": "2025-11-07",
-      "weekday": 5
-     },
-     {
-      "contributionCount": 0,
-      "date": "2025-11-08",
-      "weekday": 6
-     }
-    ]
-   },
-   {
-    "contributionDays": [
-     {
-      "contributionCount": 0,
-      "date": "2025-11-09",
-      "weekday": 0
-     },
-     {
-      "contributionCount": 0,
-      "date": "2025-11-10",
-      "weekday": 1
-     },
-     {
-      "contributionCount": 0,
-      "date": "2025-11-11",
-      "weekday": 2
-     },
-     {
-      "contributionCount": 0,
-      "date": "2025-11-12",
-      "weekday": 3
-     },
-     {
-      "contributionCount": 0,
-      "date": "2025-11-13",
-      "weekday": 4
-     },
-     {
-      "contributionCount": 0,
-      "date": "2025-11-14",
-      "weekday": 5
-     },
-     {
-      "contributionCount": 0,
-      "date": "2025-11-15",
-      "weekday": 6
-     }
-    ]
-   },
    {
     "contributionDays": [
      {
@@ -2246,8 +2063,203 @@
       "weekday": 2
      },
      {
-      "contributionCount": 11,
+      "contributionCount": 19,
       "date": "2026-10-14",
+      "weekday": 3
+     },
+     {
+      "contributionCount": 0,
+      "date": "2026-10-15",
+      "weekday": 4
+     },
+     {
+      "contributionCount": 0,
+      "date": "2026-10-16",
+      "weekday": 5
+     },
+     {
+      "contributionCount": 0,
+      "date": "2026-10-17",
+      "weekday": 6
+     }
+    ]
+   },
+   {
+    "contributionDays": [
+     {
+      "contributionCount": 1,
+      "date": "2026-10-18",
+      "weekday": 0
+     },
+     {
+      "contributionCount": 0,
+      "date": "2026-10-19",
+      "weekday": 1
+     },
+     {
+      "contributionCount": 0,
+      "date": "2026-10-20",
+      "weekday": 2
+     },
+     {
+      "contributionCount": 0,
+      "date": "2026-10-21",
+      "weekday": 3
+     },
+     {
+      "contributionCount": 0,
+      "date": "2026-10-22",
+      "weekday": 4
+     },
+     {
+      "contributionCount": 0,
+      "date": "2026-10-23",
+      "weekday": 5
+     },
+     {
+      "contributionCount": 1,
+      "date": "2026-10-24",
+      "weekday": 6
+     }
+    ]
+   },
+   {
+    "contributionDays": [
+     {
+      "contributionCount": 1,
+      "date": "2026-10-25",
+      "weekday": 0
+     },
+     {
+      "contributionCount": 1,
+      "date": "2026-10-26",
+      "weekday": 1
+     },
+     {
+      "contributionCount": 5,
+      "date": "2026-10-27",
+      "weekday": 2
+     },
+     {
+      "contributionCount": 1,
+      "date": "2026-10-28",
+      "weekday": 3
+     },
+     {
+      "contributionCount": 1,
+      "date": "2026-10-29",
+      "weekday": 4
+     },
+     {
+      "contributionCount": 2,
+      "date": "2026-10-30",
+      "weekday": 5
+     },
+     {
+      "contributionCount": 3,
+      "date": "2026-10-31",
+      "weekday": 6
+     }
+    ]
+   },
+   {
+    "contributionDays": [
+     {
+      "contributionCount": 1,
+      "date": "2026-11-01",
+      "weekday": 0
+     },
+     {
+      "contributionCount": 2,
+      "date": "2026-11-02",
+      "weekday": 1
+     },
+     {
+      "contributionCount": 2,
+      "date": "2026-11-03",
+      "weekday": 2
+     },
+     {
+      "contributionCount": 1,
+      "date": "2026-11-04",
+      "weekday": 3
+     },
+     {
+      "contributionCount": 0,
+      "date": "2026-11-05",
+      "weekday": 4
+     },
+     {
+      "contributionCount": 0,
+      "date": "2026-11-06",
+      "weekday": 5
+     },
+     {
+      "contributionCount": 0,
+      "date": "2026-11-07",
+      "weekday": 6
+     }
+    ]
+   },
+   {
+    "contributionDays": [
+     {
+      "contributionCount": 0,
+      "date": "2026-11-08",
+      "weekday": 0
+     },
+     {
+      "contributionCount": 0,
+      "date": "2026-11-09",
+      "weekday": 1
+     },
+     {
+      "contributionCount": 0,
+      "date": "2026-11-10",
+      "weekday": 2
+     },
+     {
+      "contributionCount": 0,
+      "date": "2026-11-11",
+      "weekday": 3
+     },
+     {
+      "contributionCount": 4,
+      "date": "2026-11-12",
+      "weekday": 4
+     },
+     {
+      "contributionCount": 8,
+      "date": "2026-11-13",
+      "weekday": 5
+     },
+     {
+      "contributionCount": 5,
+      "date": "2026-11-14",
+      "weekday": 6
+     }
+    ]
+   },
+   {
+    "contributionDays": [
+     {
+      "contributionCount": 4,
+      "date": "2026-11-15",
+      "weekday": 0
+     },
+     {
+      "contributionCount": 2,
+      "date": "2026-11-16",
+      "weekday": 1
+     },
+     {
+      "contributionCount": 1,
+      "date": "2026-11-17",
+      "weekday": 2
+     },
+     {
+      "contributionCount": 0,
+      "date": "2026-11-18",
       "weekday": 3
      }
     ]
@@ -2255,14 +2267,14 @@
   ]
  },
  "totals": {
-  "commits": 199,
+  "commits": 252,
   "pull_requests": 14,
   "issues": 0,
   "reviews": 0
  },
  "streaks": {
-  "current": 1,
-  "longest": 7,
-  "active_days": 53
+  "current": 6,
+  "longest": 12,
+  "active_days": 71
  }
 }
