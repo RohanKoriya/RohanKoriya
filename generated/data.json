@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-11-24T13:46:51+00:00",
+ "fetched_at": "2026-11-25T12:58:54+00:00",
  "demo": false,
  "username": "RohanKoriya",
  "profile": {
@@ -16,11 +16,23 @@
    "language": "JavaScript",
    "stars": 1,
    "forks": 0,
-   "pushed_at": "2026-11-24T12:31:56Z",
+   "pushed_at": "2026-11-25T12:45:31Z",
    "url": "https://github.com/RohanKoriya/Rohan-Portfolio",
    "fork": false,
    "archived": false,
    "homepage": "https://rohan-portfolio-rust.vercel.app"
+  },
+  {
+   "name": "LeadFlow-CRM-Platform",
+   "description": "",
+   "language": "TypeScript",
+   "stars": 1,
+   "forks": 0,
+   "pushed_at": "2026-11-25T12:38:39Z",
+   "url": "https://github.com/RohanKoriya/LeadFlow-CRM-Platform",
+   "fork": false,
+   "archived": false,
+   "homepage": "https://smart-leads-dashboard-n2ug.onrender.com"
   },
   {
    "name": "RohanKoriya",
@@ -28,7 +40,7 @@
    "language": "Python",
    "stars": 1,
    "forks": 0,
-   "pushed_at": "2026-11-23T12:49:43Z",
+   "pushed_at": "2026-11-24T13:46:52Z",
    "url": "https://github.com/RohanKoriya/RohanKoriya",
    "fork": false,
    "archived": false,
@@ -69,18 +81,6 @@
    "fork": false,
    "archived": false,
    "homepage": "https://saree-visual-search.streamlit.app/"
-  },
-  {
-   "name": "LeadFlow-CRM-Platform",
-   "description": "",
-   "language": "TypeScript",
-   "stars": 1,
-   "forks": 0,
-   "pushed_at": "2026-07-27T15:39:33Z",
-   "url": "https://github.com/RohanKoriya/LeadFlow-CRM-Platform",
-   "fork": false,
-   "archived": false,
-   "homepage": "https://smart-leads-dashboard-n2ug.onrender.com"
   },
   {
    "name": "Page-pulse",
@@ -210,7 +210,7 @@
   ]
  ],
  "calendar": {
-  "totalContributions": 305,
+  "totalContributions": 310,
   "weeks": [
    {
     "contributionDays": [
@@ -2256,20 +2256,25 @@
       "contributionCount": 3,
       "date": "2026-11-24",
       "weekday": 2
+     },
+     {
+      "contributionCount": 5,
+      "date": "2026-11-25",
+      "weekday": 3
      }
     ]
    }
   ]
  },
  "totals": {
-  "commits": 264,
+  "commits": 269,
   "pull_requests": 14,
   "issues": 0,
   "reviews": 0
  },
  "streaks": {
-  "current": 5,
+  "current": 6,
   "longest": 12,
-  "active_days": 77
+  "active_days": 78
  }
 }
