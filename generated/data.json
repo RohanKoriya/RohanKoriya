@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-11-25T12:58:54+00:00",
+ "fetched_at": "2026-11-26T12:39:04+00:00",
  "demo": false,
  "username": "RohanKoriya",
  "profile": {
@@ -16,11 +16,35 @@
    "language": "JavaScript",
    "stars": 1,
    "forks": 0,
-   "pushed_at": "2026-11-25T12:45:31Z",
+   "pushed_at": "2026-11-26T12:25:28Z",
    "url": "https://github.com/RohanKoriya/Rohan-Portfolio",
    "fork": false,
    "archived": false,
    "homepage": "https://rohan-portfolio-rust.vercel.app"
+  },
+  {
+   "name": "Ranklytics-AI-Powered-SEO-Analytics-Platform",
+   "description": "",
+   "language": "TypeScript",
+   "stars": 1,
+   "forks": 0,
+   "pushed_at": "2026-11-26T12:20:32Z",
+   "url": "https://github.com/RohanKoriya/Ranklytics-AI-Powered-SEO-Analytics-Platform",
+   "fork": false,
+   "archived": false,
+   "homepage": "https://seo-rank-tracker-swart.vercel.app"
+  },
+  {
+   "name": "RohanKoriya",
+   "description": "",
+   "language": "Python",
+   "stars": 1,
+   "forks": 0,
+   "pushed_at": "2026-11-25T12:58:55Z",
+   "url": "https://github.com/RohanKoriya/RohanKoriya",
+   "fork": false,
+   "archived": false,
+   "homepage": ""
   },
   {
    "name": "LeadFlow-CRM-Platform",
@@ -35,18 +59,6 @@
    "homepage": "https://smart-leads-dashboard-n2ug.onrender.com"
   },
   {
-   "name": "RohanKoriya",
-   "description": "",
-   "language": "Python",
-   "stars": 1,
-   "forks": 0,
-   "pushed_at": "2026-11-24T13:46:52Z",
-   "url": "https://github.com/RohanKoriya/RohanKoriya",
-   "fork": false,
-   "archived": false,
-   "homepage": ""
-  },
-  {
    "name": "photo-gallery",
    "description": "",
    "language": "JavaScript",
@@ -57,18 +69,6 @@
    "fork": false,
    "archived": false,
    "homepage": ""
-  },
-  {
-   "name": "Ranklytics-AI-Powered-SEO-Analytics-Platform",
-   "description": "",
-   "language": "TypeScript",
-   "stars": 1,
-   "forks": 0,
-   "pushed_at": "2026-09-08T15:18:45Z",
-   "url": "https://github.com/RohanKoriya/Ranklytics-AI-Powered-SEO-Analytics-Platform",
-   "fork": false,
-   "archived": false,
-   "homepage": "https://seo-rank-tracker-swart.vercel.app"
   },
   {
    "name": "saree-visual-search",
@@ -186,7 +186,7 @@
   ],
   [
    "TypeScript",
-   361017
+   397806
   ],
   [
    "Python",
@@ -198,7 +198,7 @@
   ],
   [
    "HTML",
-   19040
+   19011
   ],
   [
    "Java",
@@ -210,7 +210,7 @@
   ]
  ],
  "calendar": {
-  "totalContributions": 310,
+  "totalContributions": 316,
   "weeks": [
    {
     "contributionDays": [
@@ -2261,20 +2261,25 @@
       "contributionCount": 5,
       "date": "2026-11-25",
       "weekday": 3
+     },
+     {
+      "contributionCount": 6,
+      "date": "2026-11-26",
+      "weekday": 4
      }
     ]
    }
   ]
  },
  "totals": {
-  "commits": 269,
+  "commits": 275,
   "pull_requests": 14,
   "issues": 0,
   "reviews": 0
  },
  "streaks": {
-  "current": 6,
+  "current": 7,
   "longest": 12,
-  "active_days": 78
+  "active_days": 79
  }
 }
