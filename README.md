@@ -29,16 +29,16 @@
   <source media="(prefers-color-scheme: dark)" srcset="generated/projects-head-dark.svg">
   <img width="100%" alt="Projects" src="generated/projects-head-light.svg">
 </picture>
-<a href="https://github.com/RohanKoriya/Rohan-Portfolio">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="generated/project-1-dark.svg">
-  <img width="100%" alt="Rohan-Portfolio" src="generated/project-1-light.svg">
-</picture>
-</a>
 <a href="https://github.com/RohanKoriya/Ranklytics-AI-Powered-SEO-Analytics-Platform">
 <picture>
+  <source media="(prefers-color-scheme: dark)" srcset="generated/project-1-dark.svg">
+  <img width="100%" alt="Ranklytics-AI-Powered-SEO-Analytics-Platform" src="generated/project-1-light.svg">
+</picture>
+</a>
+<a href="https://github.com/RohanKoriya/Rohan-Portfolio">
+<picture>
   <source media="(prefers-color-scheme: dark)" srcset="generated/project-2-dark.svg">
-  <img width="100%" alt="Ranklytics-AI-Powered-SEO-Analytics-Platform" src="generated/project-2-light.svg">
+  <img width="100%" alt="Rohan-Portfolio" src="generated/project-2-light.svg">
 </picture>
 </a>
 <a href="https://github.com/RohanKoriya/LeadFlow-CRM-Platform">
